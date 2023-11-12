@@ -1,7 +1,9 @@
 #include <assert.h>
 
-void userDefinedException();
-
+void userDefinedException()
+{
+    return;
+}
 
 int fib1(int a)
 {
@@ -56,6 +58,31 @@ int fib3(int a)
     }
     else
     {
+        if (a > 100)
+        {
+            userDefinedException();
+        }
         return fib3(a - 1) + fib3(a - 2);
+    }
+}
+
+int user1(int a, int b, int c)
+{
+    assert(a > b);
+    assert(c > 0);
+    if (a - c > b)
+    {
+        userDefinedException();
+    }
+}
+
+int user2(int a, int b, int c)
+{
+    assert(a < b);
+    assert(c >= 0);
+    a -= b + c * b + 1;
+    if (a > b)
+    {
+        userDefinedException();
     }
 }
