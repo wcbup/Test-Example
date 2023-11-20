@@ -6,6 +6,11 @@ int div0(int a)
     return a / b;
 }
 
+int div1(int a)
+{
+    return a / 0;
+}
+
 int div_a_b1(int a, int b)
 {
     return a / b;
